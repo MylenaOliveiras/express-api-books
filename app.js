@@ -1,9 +1,10 @@
 const express = require("express"); // Import express
 const app = express(); // Create an express app
-const bookRouter = require("./routes/books"); // Import the bookRouter
+const bookRouter = require("./routes/book"); // Import the bookRouter
 
 const port = 8000 // Port number
 
+app.use(express.json()); // Middleware to parse JSON bodies
 app.use("/books", bookRouter); // Use the bookRouter for all routes that start with /books
 
 // app.get("/", (req, res) => {
